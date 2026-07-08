@@ -36,6 +36,164 @@ body::-webkit-scrollbar {
     display: none;
 }
 
+/* 팝업 */
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 10000; 
+    display: none; 
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+      transition: background-color 0.3s ease;
+}
+
+.popup-overlay.hide {
+    background-color: rgba(0, 0, 0, 0); 
+}
+
+.popup-overlay.hide .popup-content {
+    animation: popupScaleDown 0.3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.popup-content {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 500px; 
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    animation: popupScaleUp 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.popup-banner-box {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #f7f9f7; 
+}
+
+.popup-banner-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.btn-popup-reserve {
+    display: block;
+    text-align: center;
+    background-color: #046d2c; 
+    color: #ffffff !important;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 16px 20px;
+    letter-spacing: 0.5px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    border: none;
+}
+
+.btn-popup-reserve:hover {
+    background-color: #035321; 
+}
+
+.btn-popup-reserve:active {
+    transform: scale(0.98); 
+}
+
+.popup-footer {
+    background-color: #ffffff;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #f0f0f0;
+}
+
+.popup-day-label {
+    font-size: 14px;
+    color: #666666;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    user-select: none;
+}
+
+.popup-day-label input[type="checkbox"] {
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    accent-color: #046d2c;
+}
+
+.btn-popup-close {
+    background: transparent;
+    border: none;
+    color: #888888;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 500;
+    padding: 5px 10px;
+    transition: color 0.2s;
+}
+
+.btn-popup-close:hover {
+    color: #222222;
+    text-decoration: underline;
+}
+@keyframes popupScaleDown {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(0.85);
+        opacity: 0;
+    }}
+    
+
+@keyframes popupScaleUp {
+    from {
+        transform: scale(0.85);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* 📱 모바일 디바이스 최적화 스크린 케어 */
+@media (max-width: 550px) {
+    .popup-content {
+        max-width: 100%;
+    }
+    .btn-popup-reserve {
+        font-size: 1rem;
+        padding: 14px 15px;
+    }
+}
+
+
+
+
+
+
+
+
+/* 헤더 */
+
 #header_wrap {
     position: relative;
     width: 100%;
@@ -1550,16 +1708,7 @@ body::-webkit-scrollbar {
     margin: 0;
 }
 
-.hospital-footer-bar .footer-bg-graphic {
-    position: absolute;
-    right: 40px;
-    bottom: 10px;
-    width: 160px;
-    height: 130px;
-    background: url('../img/bg4.png') no-repeat center / contain;
-    opacity: 0.15;
-    pointer-events: none;
-}
+
 
 /* 퀵 */
 .green-quick-menu-wrap {
@@ -1725,9 +1874,37 @@ body::-webkit-scrollbar {
 
 
 /* 반응형시작 */
+
+/* gnb */
+@media screen and (max-width: 1000px) {
+    .header {
+        padding: 10px 24px; /* 좌우 여백을 40px에서 24px로 축소 */
+    }
+
+    .logo img {
+        height: 55px; /* 로고 높이를 70px에서 55px로 축소 */
+    }
+}
+
+
+/* ==========================================================================
+   📱 모바일 구간 (600px 이하)
+   * 스마트폰 화면에 맞춰 헤더 여백과 로고 크기를 한 번 더 최적화합니다.
+   ========================================================================== */
+@media screen and (max-width: 600px) {
+    .header {
+        padding: 8px 16px; /* 모바일 화면에 맞춰 여백을 더 촘촘하게 축소 */
+    }
+
+    .logo img {
+        height: 42px; /* 로고 높이를 42px로 축소하여 상단 답답함 해소 */
+    }
+    
+}
+
 /* 가로영역  */
 /* =================================================== */
-@media (max-width: 1024px) {
+@media (max-width: 1000px) {
 
     html,
     body {
@@ -1739,7 +1916,7 @@ body::-webkit-scrollbar {
         min-height: auto;
         overflow: visible;
         display: block;
-        margin-top: -340px;
+        margin-top: -650px;
 
 
     }
@@ -1802,6 +1979,7 @@ body::-webkit-scrollbar {
         display: none;
     }
 
+   
     div.horizontal-scroll-container#horizontal-trigger .slide-1 .text-box h2,
     div.horizontal-scroll-container#horizontal-trigger .slide-2 .text-box-2 h2 {
         font-size: 2.2rem;
@@ -1868,6 +2046,69 @@ body::-webkit-scrollbar {
         transition: none !important;
     }
 }
+@media (max-width: 600px) {
+
+    div.horizontal-scroll-container#horizontal-trigger {
+           margin-top: -650px;
+    }
+
+    div.horizontal-scroll-container#horizontal-trigger .slide .text-box,
+    div.horizontal-scroll-container#horizontal-trigger .slide .text-box-2,
+    div.horizontal-scroll-container#horizontal-trigger .slide .text-box-3,
+    div.horizontal-scroll-container#horizontal-trigger .slide .text-box-4 {
+        padding: 40px 16px;
+    }
+
+    div.horizontal-scroll-container#horizontal-trigger .slide-1 .text-box h2,
+    div.horizontal-scroll-container#horizontal-trigger .slide-2 .text-box-2 h2,
+    div.horizontal-scroll-container#horizontal-trigger .slide-3 .text-box-3 h2,
+    div.horizontal-scroll-container#horizontal-trigger .slide-4 .text-box-4 h2 {
+        font-size: 1.6rem;
+        margin-bottom: 8px; 
+        font-weight: 800;
+    }
+
+    div.horizontal-scroll-container#horizontal-trigger .slide-2 .text-box-2 h3,
+    div.horizontal-scroll-container#horizontal-trigger .slide-3 .text-box-3 h3,
+    div.horizontal-scroll-container#horizontal-trigger .slide-4 .text-box-4 h3 {
+        font-size: 1.1rem;  
+        margin-bottom: 15px;
+        font-weight: 600;
+        color: #666;        
+    }
+
+    div.horizontal-scroll-container#horizontal-trigger .slide-1 .text-box p,
+    div.horizontal-scroll-container#horizontal-trigger .slide-2 .text-box-2 p,
+    div.horizontal-scroll-container#horizontal-trigger .slide-3 .text-box-3 p,
+    div.horizontal-scroll-container#horizontal-trigger .slide-4 .text-box-4 p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin-bottom: 10px;
+    }
+
+    div.horizontal-scroll-container#horizontal-trigger .poom-counter-section {
+        bottom: 5%;
+        gap: 8px;
+        width: calc(100% - 32px);
+    }
+
+    div.horizontal-scroll-container#horizontal-trigger .poom-counter-item {
+        padding: 10px 4px;
+        border-radius: 8px;
+    }
+
+    div.horizontal-scroll-container#horizontal-trigger .poom-counter-title {
+        font-size: 0.65rem;
+    }
+
+    div.horizontal-scroll-container#horizontal-trigger .poom-counter-number {
+        font-size: 1.2rem;
+    }
+
+    div.horizontal-scroll-container#horizontal-trigger .poom-counter-unit {
+        font-size: 0.6rem;
+    }
+}
 
 /* 카드  =================================================== */
 
@@ -1893,34 +2134,46 @@ body::-webkit-scrollbar {
     .cards-grid {
         max-width: 100%;
         flex-direction: column;
-
-        gap: 40px;
-        
+        gap: 30px; 
     }
 
     .card-container {
         width: 100%;
-        max-width: 540px;
-        height: 380px;
+        max-width: 480px; 
+        height: 340px;    
         position: relative;
         margin: 10px 0;
-
-      
         display: flex;
         flex-direction: row;
-        gap: 20px;
-        
+        gap: 15px;       
     }
 
     .card-item {
         position: relative;
         top: auto;
         left: auto;
-        width: 250px;
+        width: 210px;     
         height: 100%;
         flex-shrink: 0;
     }
+    
+    .card-item .card-sub {
+        font-size: 0.8rem !important;   
+        margin-bottom: 5px;
+    }
 
+    .card-item .card-main-title {
+        font-size: 1.1rem !important; 
+        line-height: 1.4;
+        margin-bottom: 8px;
+    }
+
+    .card-item .card-desc {
+        font-size: 0.85rem !important;   
+        line-height: 1.5;
+    }
+
+    /* 기존 호버 스타일 유지 */
     .card-container:hover .card-top,
     .card-container:hover .card-bottom {
         transform: none;
@@ -1943,13 +2196,14 @@ body::-webkit-scrollbar {
         color: #555 !important;
     }
 
+    /* 섹션 큰 타이틀 글씨 축소 */
     .vertical-title h1 {
-        font-size: 32px;
-        margin-top: 40px;
+        font-size: 26px; 
+        margin-top: 30px;
     }
 }
 
-/* 💻 1000px 이하 AOS 애니메이션을  무력화 */
+/* 💻 1000px 이하 AOS 애니메이션을 무력화 */
 @media (max-width: 1000px) {
     [data-aos] {
         pointer-events: auto !important;
@@ -2113,7 +2367,7 @@ body::-webkit-scrollbar {
     }
 
     .footer-video-text {
-        font-size: 1rem;
+        font-size: 0.5rem;
         bottom: 20px;
         left: 15px;
     }
@@ -2130,11 +2384,11 @@ body::-webkit-scrollbar {
     }
 
     .footer-before-text h2 {
-        font-size: 1.5rem;
+        font-size: 1.0rem;
     }
 
     .footer-before-text p {
-        font-size: 0.9rem;
+        font-size: 0.7rem;
     }
 }
 /* ===================================================
@@ -2204,5 +2458,124 @@ body::-webkit-scrollbar {
 
     .info-box.time-box ul li {
         margin-bottom: 10px;
+    }
+}
+
+/* ==========================================================================
+              푸터    
+   ========================================================================== */
+   /* 태블릿 구간 (1000px 이하) */
+@media screen and (max-width: 1000px) {
+    .hospital-footer-bar {
+        height: auto;        /* 글자가 넘치거나 줄바꿈되어도 잘리지 않게 설정 */
+        padding: 24px 20px;  /* 위아래 여백을 살짝 넓혀 여유 공간 확보 */
+    }
+
+    .footer-logo img {
+        height: 52px;        /* 로고 크기 살짝 축소 */
+    }
+}
+
+
+/*  모바일 구간 (600px 이하)  ================ */
+@media screen and (max-width: 600px) {
+    .hospital-footer-bar {
+        padding: 20px 16px;  /* 모바일 화면에 맞춰 좌우 여백 축소 */
+    }
+
+    .footer-logo img {
+        height: 44px;        /* 스마트폰 화면 비율에 맞게 로고 축소 */
+    }
+
+    .hospital-footer-bar .footer-logo {
+        font-size: 1rem;     /* 텍스트 로고 크기 축소 */
+    }
+
+    .hospital-footer-bar .copyright {
+        font-size: 0.75rem;  /* 저작권 문구 크기 축소 */
+        text-align: center;  /* 화면이 아주 좁아져 줄바꿈이 일어나도 예쁘게 정렬 */
+        line-height: 1.4;
+    }
+}
+
+/* 퀵 */
+/* ==========================================================================
+   💻 태블릿 구간 (1000px 이하)
+   * 퀵 메뉴 전체 크기와 버튼 크기를 살짝 줄여 화면 여백을 확보합니다.
+   ========================================================================== */
+@media screen and (max-width: 1000px) {
+    .green-quick-menu-wrap {
+        right: 20px;  /* 우측 여백을 30px에서 20px로 축소 */
+        bottom: 30px; /* 하단 여백을 40px에서 30px로 축소 */
+        gap: 12px;    /* 아이템 간의 간격 축소 */
+    }
+
+    .quick-main-bar {
+        width: 80px;        /* 메인 바 너비 축소 (90px -> 80px) */
+        padding: 20px 0;    /* 위아래 패딩 축소 */
+    }
+
+    .quick-item {
+        padding: 12px 0;    /* 개별 메뉴 클릭 영역 조절 */
+    }
+
+    .quick-item .item-icon {
+        font-size: 1.25rem; /* 아이콘 크기 살짝 축소 */
+        margin-bottom: 6px;
+    }
+
+    /* 토글 버튼 및 TOP 버튼 크기 축소 */
+    .quick-toggle-btn,
+    .quick-top-btn {
+        width: 66px;        /* 버튼 크기 축소 (76px -> 66px) */
+        height: 66px;
+    }
+}
+
+
+/* ==========================================================================
+   📱 모바일 구간 (600px 이하)
+   * 스마트폰 화면 크기에 맞춰 콤팩트하게 최종 최적화합니다.
+   ========================================================================== */
+@media screen and (max-width: 600px) {
+    .green-quick-menu-wrap {
+        right: 15px;  /* 모바일 화면 가장자리에 붙도록 여백 축소 */
+        bottom: 20px; 
+        gap: 10px;
+    }
+
+    .quick-main-bar {
+        width: 68px;        /* 메인 바 너비 최종 축소 (80px -> 68px) */
+        padding: 15px 0;
+        border-radius: 34px; /* 너비가 줄어든 비율에 맞춰 라운드 값 조절 */
+    }
+
+    .quick-item {
+        padding: 10px 0;
+    }
+
+    .quick-item .item-icon {
+        font-size: 1.1rem;  /* 아이콘 크기 축소 */
+        margin-bottom: 4px;
+    }
+
+    .quick-item span {
+        font-size: 0.65rem; /* 텍스트 크기 축소 */
+        letter-spacing: -0.8px; /* 글자가 깨지거나 넘치지 않게 자간 축소 */
+    }
+
+    /* 토글 버튼 및 TOP 버튼 모바일 최적화 */
+    .quick-toggle-btn,
+    .quick-top-btn {
+        width: 56px;        /* 한 손 터치에 무리 없는 최소 크기(56px)로 축소 */
+        height: 56px;
+    }
+
+    .quick-toggle-btn span {
+        font-size: 0.75rem; /* 토글 버튼 내부 글씨 크기 축소 */
+    }
+
+    .quick-top-btn {
+        font-size: 1.2rem;  /* TOP 버튼 화살표(또는 글씨) 크기 축소 */
     }
 }
