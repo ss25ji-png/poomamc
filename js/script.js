@@ -448,3 +448,54 @@ if (cursorDots.length > 0) {
     });
 }
 
+//팝업// 1. 웹페이지가 열리자마자 바로 팝업 체크
+document.addEventListener("DOMContentLoaded", function () {
+    // 'hideCheckPopup' 이라는 일일 차단 쿠키가 없으면 팝업창 온(Flex)
+    if (getCookie("hideCheckPopup") !== "true") {
+        document.getElementById("mainPopup").style.display = "flex";
+    }
+});
+
+// 2. 🔥 [수정] 팝업창 닫기 액션 작동 처리 (스르륵 효과 반영)
+function closePopup() {
+    // 오늘 하루 보지 않기가 체크되어 있으면 1일 만료 쿠키 구워버리기
+    if (document.getElementById("dayCheck").checked) {
+        setCookie("hideCheckPopup", "true", 1);
+    }
+    
+    let popup = document.getElementById("mainPopup");
+    
+    // 💡 스르륵 닫히는 애니메이션 클래스를 주입합니다.
+    popup.classList.add("hide");
+    
+    // 💡 애니메이션이 작동하는 시간(0.3초 = 300ms) 동안 기다린 후 완전히 display: none 처리합니다.
+    setTimeout(function() {
+        popup.style.display = "none";
+        popup.classList.remove("hide"); // 다음 오픈을 위해 클래스 리셋
+    }, 300);
+}
+
+// 🍪 쿠키 굽기 모듈
+function setCookie(name, value, days) {
+    let date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    let expires = "expires=" + date.toUTCString();
+    document.cookie = name + "=" + value + ";" + expires + ";path=/";
+}
+
+// 🍪 쿠키 확인용 리더 모듈
+function getCookie(name) {
+    let cookieName = name + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(cookieName) == 0) {
+            return c.substring(cookieName.length, c.length);
+        }
+    }
+    return "";
+}
