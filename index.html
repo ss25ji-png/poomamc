@@ -15,12 +15,35 @@
 
 <body>
 
+    <!-- 팝업창 전체 배경 레이어 -->
+<div id="mainPopup" class="popup-overlay">
+    <div class="popup-content">
+        
+        <div class="popup-banner-box">
+            <img src="./img/popup.png" alt="우리아이 건강검진 지금이 골든타임!">
+            
+            <a href="#reservation" class="btn-popup-reserve" onclick="closePopup()">
+                지금 바로 예약하기 ➔
+            </a>
+        </div>
+        
+        <!-- 💡 하단: 오늘 하루 보지 않기 및 닫기 버튼 구역 -->
+        <div class="popup-footer">
+            <label class="popup-day-label">
+                <input type="checkbox" id="dayCheck"> 오늘 하루 보지 않기
+            </label>
+            <button class="btn-popup-close" onclick="closePopup()">닫기</button>
+        </div>
+
+    </div>
+</div>
+
     <!-- 헤더 gnb -->
     <div id="header_wrap">
         <header class="header">
             <!-- 왼쪽 로고 -->
             <div class="logo">
-                <a href="#"><img src="./img/LOGO.png" alt="logo"></a>
+                <a href="./index.html"><img src="./img/LOGO.png" alt="logo"></a>
             </div>
             <!-- 햄버거 -->
             <button class="menu_trigger" id="menuTrigger" aria-label="메뉴 열기">
@@ -455,9 +478,7 @@
         </div>
         <!-- 카피라이트 문구 -->
         <p class="copyright">Copyright© 2026 Poom animal medical center . All Rights Reserved.</p>
-
-        <!-- 이미지 우측 하단에 있는 귀여운 강아지/고양이 백그라운드 아이콘 -->
-        <div class="footer-bg-graphic"></div>
+        
     </div> <!-- 푸터 끝-->
 
 
