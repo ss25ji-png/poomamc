@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>품동물메디컬센터</title>
+    <!-- 파비콘 연결 -->
+    <link rel="shortcut icon" href="./img/pavicon.png" type="image/x-icon">
+    <!-- 외부 css 연결 -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- CDN 형식으로 연결한 aosjs -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- 헤더 gnb -->
+    <div id="header_wrap">
+        <header class="header">
+            <!-- 왼쪽 로고 -->
+            <div class="logo">
+                <a href="#"><img src="./img/LOGO.png" alt="logo"></a>
+            </div>
+            <!-- 햄버거 -->
+            <button class="menu_trigger" id="menuTrigger" aria-label="메뉴 열기">
+                <span class="burger_line"></span>
+                <span class="burger_line"></span>
+            </button>
+        </header>
+
+        <nav class="gnb_overlay" id="gnbOverlay">
+            <ul class="gnb_list">
+                <li><a href="#slides">About Poom</a></li>
+                <li><a href="#go-slide-2" class="gnb-special-btn">Special</a></li>
+                <li><a href="#5section" class="gnb-dept-btn">Medical Services</a></li>
+                <li><a href="#footer-section">Clinical</a></li>
+                <li><a href="#reservation">Reservation</a></li>
+            </ul>
+        </nav>
+    </div>
+    <!-- 메인영상 -->
+    <div id="main-container">
+        <div id="main-section">
+            <video class="bg-video" autoplay loop muted playsinline>
+                <source src="./img/poommm.mp4" type="video/mp4">
+
+            </video>
+            <div class="hero_slogan_content">
+                <p class="sub_title">24H POOM ANIMAL MEDICAL CENTER</p>
+                <h1 class="main_slogan">
+                    <span class="word">의학의</span>
+                    <span class="word">경계를</span>
+                    <span class="word">넘어,</span><br>
+                    <span class="word">서로를</span>
+                    <span class="word">풀고</span>
+                    <span class="word">품다</span>
+                </h1>
+            </div>
+        </div>
+    </div><!-- 메인영상  끝-->
+    <!-- 가로로 움직이는 구역 -->
+    <div class="horizontal-scroll-container" id="horizontal-trigger">
+        <div class="sticky-wrapper">
+            <div class="horizontal-slides" id="slides">
+                <div class="slide slide-1">
+                    <!-- 첫 번째 텍스트 박스 -->
+                    <div class="text-box">
+                        <h2>Why poom</h2>
+                        <p>품동물메디컬센터는 내원하시는 환자분들의<br>
+                            소중한 가족을 아끼며 더 나아가 삶 자체를<br>
+                            존중하는 마음으로 정성 어린 진료를 제공합니다.</p>
+                        <p class="sub-text">치료를 넘어, 삶의 행복까지!<br>
+                            품동물의료센터에서 경험해 보세요.</p>
+
+                    </div>
+                    <div class="poom-counter-section">
+                        <div class="poom-counter-item" style="transition-delay: 0s;">
+                            <span class="poom-counter-title">누적 환자 수</span>
+                            <span class="poom-counter-number" data-target="14000">0</span>
+                            <span class="poom-counter-unit">마리 이상</span>
+                        </div>
+                        <div class="poom-counter-item" style="transition-delay: 0.15s;">
+                            <span class="poom-counter-title">누적 수술 건수</span>
+                            <span class="poom-counter-number" data-target="4000">0</span>
+                            <span class="poom-counter-unit">건 이상</span>
+                        </div>
+                        <div class="poom-counter-item" style="transition-delay: 0.3s;">
+                            <span class="poom-counter-title">호르몬 진료</span>
+                            <span class="poom-counter-number" data-target="3000">0</span>
+                            <span class="poom-counter-unit">건 이상</span>
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <div class="slide slide-2">
+                    <div class="text-box-2">
+                        <h2>1. 생명 존중과 정직한 진료</h2>
+                        <h3>(Integrity)</h3>
+                        <p>과잉 진료를 철저히 배제하고, 오직 환자의 회복과 건강만을<br>
+                            생각하는 정직하고 바른 의료 서비스를 실현합니다.</p>
+                    </div>
+                </div>
+                <div class="slide slide-3">
+                    <div class="text-box-3">
+                        <h2>2. 24시간 안심 케어</h2>
+                        <h3>(24H Continuity)</h3>
+                        <p>예측할 수 없는 응급 상황 속에서도 보호자가 안심할 수 있도록,<br>
+                            365일 24시간 언제나 숙련된 의료진이 환자의 곁을 지키며<br>
+                            가장 신속하고 정확한 집중 치료를 제공합니다.</p>
+                    </div>
+                </div>
+                <div class="slide slide-4">
+                    <div class="text-box-4">
+                        <h2>3. 첨단 기술과 협진 시스템</h2>
+                        <h3>(Excellence)</h3>
+                        <p>대학병원급 최첨단 의료 장비를 바탕으로,<br>
+                            각 분과별 전문 수의사들이 유기적으로 협진합니다.<br>
+                            난치성 질환부터 고난도 수술까지 환자 맞춤형 정밀 의료를 완성합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--5 진료과목 -->
+    <div id="5section">
+        <div class="vertical-title" data-aos="fade-up" data-aos-duration="2000">
+            <h1>진료과목안내</h1>
+            <p>분야별 맞춤 진료로 반려동물의 건강을 지킵니다</p>
+        </div>
+        <div class="cards-scroll-container">
+
+            <div class="cards-grid" id="infiniteTrack">
+
+                <!-- [1번 카드 ] 신경외과 -->
+                <div class="card-container" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="card-item card-top">
+                        <div class="card-header-wrap">
+                            <span class="card-sub">01</span>
+
+                            <div class="card-icon"><img src="./img/c_1.png" alt="신경외과 아이콘"></div>
+                        </div>
+                        <h3 class="card-main-title">신경외과</h3>
+                        <p class="card-desc">뇌 및 척추 신경계 질환에 대한 정밀한 진단과 전문적인 치료를 제공합니다.</p>
+                    </div>
+                    <div class="card-item card-bottom">
+                        <img src="./img/cc1.jpeg" alt="사진">
+                    </div>
+                </div>
+
+                <!-- [2번 카드 ] 정형외과 -->
+                <div class="card-container" data-aos="fade-up" data-aos-duration="2000">
+                    <div class="card-item card-top">
+                        <div class="card-header-wrap">
+                            <span class="card-sub">02</span>
+                            <div class="card-icon"><img src="./img/c_2.png" alt="정형외과 아이콘"></div>
+                        </div>
+                        <h3 class="card-main-title">정형외과</h3>
+                        <p class="card-desc">뼈, 관절, 근육 등 척추·관절 질환의 원인을 정확히 분석하여 치료합니다.</p>
+                    </div>
+                    <div class="card-item card-bottom">
+                        <img src="./img/cc1 (4).jpeg" alt="사진">
+                    </div>
+                </div>
+
+                <!-- [3번 카드 ] 영상센터 -->
+                <div class="card-container" data-aos="fade-up" data-aos-duration="3000">
+                    <div class="card-item card-top">
+                        <div class="card-header-wrap">
+                            <span class="card-sub">03</span>
+                            <div class="card-icon"><img src="./img/c_3.png" alt="영상센터 아이콘"></div>
+                        </div>
+                        <h3 class="card-main-title">영상센터</h3>
+                        <p class="card-desc">첨단 영상 진단 장비를 통해 질환의 초기 발견과 정확한 분석을 책임집니다.</p>
+                    </div>
+                    <div class="card-item card-bottom">
+                        <img src="./img/cc1 (5).jpeg" alt="사진">
+                    </div>
+                </div>
+
+                <!-- [4번 카드] 종양센터 -->
+                <div class="card-container" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="card-item card-top">
+                        <div class="card-header-wrap">
+                            <span class="card-sub">04</span>
+                            <div class="card-icon"><img src="./img/c_4.png" alt="종양센터 아이콘"></div>
+                        </div>
+                        <h3 class="card-main-title">종양센터</h3>
+                        <p class="card-desc">체계적이고 정밀한 검사를 통해 암의 조기 진단 및 맞춤형 치료를 지향합니다.</p>
+                    </div>
+                    <div class="card-item card-bottom">
+                        <img src="./img/cc1 (3).jpeg" alt="사진">
+                    </div>
+                </div>
+
+                <!-- [5번 카드] 심혈관질환 -->
+                <div class="card-container" data-aos="fade-up" data-aos-duration="2000">
+                    <div class="card-item card-top">
+                        <div class="card-header-wrap">
+                            <span class="card-sub">05</span>
+                            <div class="card-icon"><img src="./img/c_5.png" alt="심혈관질환 아이콘"></div>
+                        </div>
+                        <h3 class="card-main-title">심혈관질환</h3>
+                        <p class="card-desc">심장 및 혈관 건강을 지키기 위해 전문적인 예방 케어와 정밀 치료를 시행합니다.</p>
+                    </div>
+                    <div class="card-item card-bottom">
+                        <img src="./img/cc1 (1).jpeg" alt="사진">
+                    </div>
+                </div>
+
+                <!-- [6번 카드] 중증내과질환 -->
+                <div class="card-container" data-aos="fade-up" data-aos-duration="3000">
+                    <div class="card-item card-top">
+                        <div class="card-header-wrap">
+                            <span class="card-sub">06</span>
+                            <div class="card-icon"><img src="./img/c_6.png" alt="중증내과질환 아이콘"></div>
+                        </div>
+                        <h3 class="card-main-title">중증내과질환</h3>
+                        <p class="card-desc">복합적이고 정밀한 접근이 필요한 심도 깊은 내과 질환을 책임지고 치료합니다.</p>
+                    </div>
+                    <div class="card-item card-bottom">
+                        <img src="./img/cc1 (2).jpeg" alt="사진">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div><!-- 진료과목 끝 -->
+    <!--자가진단 -->
+    <div class="custom-next-section">
+
+        <div id="pet-diagnosis-section">
+            <div class="diagnosis-header" data-aos="fade-up" data-aos-duration="2000">
+                <span>자가진단으로 알아보는</span>
+                <h2>우리 아이에게 필요한 진료 프로그램</h2>
+            </div>
+
+            <div class="bubble-grid-container">
+
+                <!-- 열 1 -->
+                <div class="bubble-column">
+                    <!-- 1번 카드: 정형외과 -->
+                    <div class="bubble-card point-orange" data-aos="fade-up" data-aos-duration="1000">
+                        <span class="category">정형외과</span>
+                        <h3>"살이 부쩍 찌더니<br>걸음걸이가 이상하고 다리를 절어요."</h3>
+
+                        <!--  대답 영역 -->
+                        <div class="answer-overlay">
+                            <span class="quote-mark">“</span>
+                            <p>체중 증가로 인한 <strong>슬개골 탈구 및 관절염</strong> 가능성이 높습니다. 정밀 엑스레이 검사 후 체중 감량 플랜과 맞춤 치료를 제안합니다.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 2번 카드: 중증내과 -->
+                    <div class="bubble-card bg-white text-dark" data-aos="fade-up" data-aos-duration="2000">
+                        <span class="category text-green">중증내과질환</span>
+                        <h3>"요즘 부쩍 기운이 없고<br>사료도 물도 잘 안 마셔요."</h3>
+
+                        <div class="answer-overlay type-light">
+                            <span class="quote-mark">“</span>
+                            <p>단순 기력 저하가 아닌 <strong>신부전이나 내분비 질환</strong>의 신호일 수 있습니다. 정밀 혈액검사와 수액 처치로 아이의 컨디션을 회복시킵니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 열 2 -->
+                <div class="bubble-column">
+                    <!-- 3번 카드: 치과클리닉 -->
+                    <div class="bubble-card bg-dark-grey" data-aos="fade-up" data-aos-duration="3000">
+                        <span class="category text-green">치과클리닉</span>
+                        <h3>"수술은 무서운데,<br>스케일링만으로 입 냄새가 잡힐까요?"</h3>
+
+                        <div class="answer-overlay">
+                            <span class="quote-mark">“</span>
+                            <p>치석이 잇몸 안쪽까지 파고든 <strong>치주염</strong>일 수 있습니다. 안전한 흡입마취 하에 스케일링과 덴탈 케어로 통증의 원인을 치료합니다.</p>
+                        </div>
+                    </div>
+
+                    <!-- 4번 카드: 종양센터 -->
+                    <div class="bubble-card point-orange-light bg-image-1" data-aos="fade-up" data-aos-duration="1000">
+                        <span class="category">종양센터</span>
+                        <h3>"아이 몸에 전에는 없던<br>딱딱한 혹이 만져져요."</h3>
+
+                        <div class="answer-overlay">
+                            <span class="quote-mark">“</span>
+                            <p>단순 지방종일 수도 있지만, 악성 종양인 <strong>암(Cancer)</strong>의 신호일 수 있습니다. 조직검사 및 초음파를 통해 조기에 정확히
+                                진단합니다.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 열 3 -->
+                <div class="bubble-column">
+                    <!-- 5번 카드: 신경외과 -->
+                    <div class="bubble-card bg-white text-dark" data-aos="fade-up" data-aos-duration="2000">
+                        <span class="category text-orange">신경외과/노령성</span>
+                        <h3>"나이가 들면서 밤마다<br>잠을 안 자고 벽을 보고 서성거려요."</h3>
+
+                        <div class="answer-overlay type-light">
+                            <span class="quote-mark">“</span>
+                            <p>인지기능 장애 증상, 즉 <strong>반려동물 치매나 뇌신경계 질환</strong>일 확률이 높습니다. MRI 검사 및 인지력 개선 치료로 진행을 늦춰줍니다.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 6번 카드: 피부클리닉 -->
+                    <div class="bubble-card bg-navy " data-aos="fade-up" data-aos-duration="3000">
+                        <span class="category text-pink">피부/아토피</span>
+                        <h3>"발바닥을 피가 날 때까지 핥고 몸을 자꾸 긁어요."</h3>
+
+                        <div class="answer-overlay">
+                            <span class="quote-mark">“</span>
+                            <p>만성적인 <strong>알레르기나 아토피성 피부염</strong>입니다. 일시적인 약물 처방이 아닌 원인체 검사(알러젠 검사)를 통해 근본적인 환경을
+                                개선합니다.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 열 4 -->
+                <div class="bubble-column">
+                    <!-- 7번 카드: 영상진단 -->
+                    <div class="bubble-card bg-white text-dark" data-aos="fade-up" data-aos-duration="1000">
+                        <span class="category text-orange">영상진단센터</span>
+                        <h3>"눈에 보이지 않는 잔병까지<br>정밀하게 검사해보고 싶어요."</h3>
+
+                        <div class="answer-overlay type-light">
+                            <span class="quote-mark">“</span>
+                            <p>본원은 최고 사양의 <strong>CT, 초음파, 고해상도 엑스레이</strong>를 보유하고 있어 판독이 까다로운 미세 병변까지 놓치지 않고 찾아냅니다.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 8번 카드: 심혈관 -->
+                    <div class="bubble-card point-orange-light bg-image-2" data-aos="fade-up" data-aos-duration="2000">
+                        <span class="category">심혈관질환</span>
+                        <h3>"조금만 산책해도 헥헥거리고<br>마른기침을 자주 해요."</h3>
+
+                        <div class="answer-overlay">
+                            <span class="quote-mark">“</span>
+                            <p>심장 판막이 약해져 발생하는 <strong>심장병(심부전)</strong>의 대표적인 증상입니다. 심장 초음파 진단 후 정밀한 약물 처방으로 다스려야 합니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div><!-- 자가진단 끝 -->
+    <!--고양이 세션 -->
+    <div id="footer-section">
+        <!-- [왼쪽] 고정 -->
+        <div class="footer-left-panel">
+            <div class="footer-title" data-aos="fade-in" data-aos-duration="3000">
+                <video class="footer-video" autoplay loop muted playsinline>
+                    <source src="./img/v_4.mp4" type="video/mp4">
+                </video>
+                <div class="footer-video-text">
+                    아이가 주는 행복만큼,<br>오래도록 건강하게 머물 수 있도록
+                </div>
+            </div>
+        </div>
+
+        <!-- [오른쪽] 창 -->
+        <div class="footer-right-panel" id="rightExpandedPanel">
+            <div class="footer-before-text" id="beforeText">
+                <h2>365일, 당신의 반려동물이 가장 안전한 곳</h2>
+                <p>"작은 숨소리 하나 놓치지 않는, 또 하나의 가족이 되겠습니다."</p>
+            </div>
+
+            <div class="footer-grid-container">
+                <!-- 콘텐츠 1 -->
+                <div class="footer-card">
+                    <img src="./img/r_1.jpeg" alt="병원 인테리어">
+                    <div class="footer-card-text">
+                        <h3>친환경 의료 공간</h3>
+                        <p>아이들이 대기하는 순간에도 불안하지 않도록 따뜻하고 편안한 인테리어로 채웠습니다.</p>
+                    </div>
+                </div>
+                <!-- 콘텐츠 2 -->
+                <div class="footer-card">
+                    <img src="./img/r_2.jpg" alt="메디컬 센터">
+                    <div class="footer-card-text">
+                        <h3>첨단 메디컬 센터</h3>
+                        <p>대학병원급 정밀 검사 장비와 멸균 수술 시스템으로 소중한 가족을 안전하게 치료합니다.</p>
+                    </div>
+                </div>
+                <!-- 콘텐츠 3 -->
+                <div class="footer-card">
+                    <video src="./img/v_2.mp4" autoplay loop muted playsinline></video>
+                    <div class="footer-card-text">
+                        <h3>24시간 안심 케어</h3>
+                        <p>풍부한 임상 경험을 가진 전문 수의사들이 365일 실시간으로 아이들의 건강을 지킵니다.</p>
+                    </div>
+                </div>
+                <!-- 콘텐츠 4 -->
+                <div class="footer-card">
+                    <video src="./img/v_3.mp4" autoplay loop muted playsinline></video>
+                    <div class="footer-card-text">
+                        <h3>건강한 내일, 행복한 동행</h3>
+                        <p>처음 만난 날의 건강함 그대로 보호자님과 오래도록 행복한 내일을 보낼 수 있도록 함께합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div><!-- 고양이끝 -->
+    <!--진료 안내-->
+    <div class="custom-next-section second-new" id="reservation" data-aos="fade-up" data-aos-duration="2000">
+        <div class="hospital-info-wrap">
+            <div class="booking-left-zone">
+                <!-- 1. 초진예약 박스 -->
+                <div class="info-box" data-aos="fade-up" data-aos-duration="2000">
+
+                    <div class="info-move-content">
+                        <h3>초진예약</h3>
+                        <p>전화나 카카오톡으로 "아이 이름, 보호자님 핸드폰번호, 품종, 나이, 몸무게, 내원(방문)목적, 수의사와 상담하고 싶은 내용"을 알려 주시면 예약이 가능합니다.</p>
+                    </div>
+                </div>
+
+                <!-- 2. 재진예약 박스 -->
+                <div class="info-box" data-aos="fade-up" data-aos-duration="2000">
+                    <div class="info-move-content">
+                        <h3>재진예약</h3>
+                        <p>전화나 카카오톡으로 "아이 이름, 보호자님 핸드폰번호, 내원(방문)목적"을 알려 주시면 예약이 가능합니다.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 3. 진료시간 박스  -->
+            <div class="info-box time-box" data-aos="fade-left" data-aos-duration="3000">
+                <h3>Treatment Hours</h3>
+                <ul>
+                    <li><span>주간진료</span> AM 10:00 ~ PM 21:00</li>
+                    <li><span>야간진료</span> PM 21:00 ~ AM 09:00</li>
+                    <li><span>면회시간</span> PM 12:00 ~ PM 19:00</li>
+                </ul>
+                <span class="notice-text">*참고: PM 21:00 이후 야간 진료비가 부과됩니다.</span>
+            </div>
+
+        </div>
+
+
+
+    </div><!-- 진료안내 끝 -->
+    <!-- 푸터-->
+    <div class="hospital-footer-bar">
+        <!-- 병원 공식 로고 (텍스트나 이미지로 대체 가능) -->
+        <div class="footer-logo">
+            <img src="./img/f-LOGO.png" alt="로고">
+        </div>
+        <!-- 카피라이트 문구 -->
+        <p class="copyright">Copyright© 2026 Poom animal medical center . All Rights Reserved.</p>
+
+        <!-- 이미지 우측 하단에 있는 귀여운 강아지/고양이 백그라운드 아이콘 -->
+        <div class="footer-bg-graphic"></div>
+    </div> <!-- 푸터 끝-->
+
+
+    <!-- 퀵버튼 -->
+    <div class="green-quick-menu-wrap">
+        <div class="quick-main-bar" id="quickMenuBar">
+            <!-- 메뉴 1 -->
+            <a href="#booking-section" class="quick-item">
+                <div class="item-icon">✏️</div>
+                <span>간편진료예약</span>
+            </a>
+            <!-- 메뉴 2 -->
+            <a href="https://naver.com" target="_blank" class="quick-item">
+                <div class="item-icon">📝</div>
+                <span>네이버예약</span>
+            </a>
+            <!-- 메뉴 3 -->
+            <a href="#consulting-section" class="quick-item">
+                <div class="item-icon">🎧</div>
+                <span>온라인상담</span>
+            </a>
+            <!-- 메뉴 4 -->
+            <a href="https://kakao.com" target="_blank" class="quick-item">
+                <div class="item-icon">💬</div>
+                <span>카카오상담</span>
+            </a>
+        </div>
+        <div class="quick-toggle-btn" onclick="toggleQuickMenu()">
+            <span>QUICK</span>
+        </div>
+
+        <!-- Top -->
+        <button class="quick-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+            ↑
+        </button>
+
+    </div>
+
+    <!-- 마우스 -->
+    <div class="cursor-dot"><img src="./img/mouse.png" alt="발바닥"></div>
+    <div class="cursor-dot"><img src="./img/mouse.png" alt="발바닥"></div>
+    <div class="cursor-dot"><img src="./img/mouse.png" alt="발바닥"></div>
+    <div class="cursor-dot"><img src="./img/mouse.png" alt="발바닥"></div>
+    <div class="cursor-dot"><img src="./img/mouse.png" alt="발바닥"></div>
+
+
+
+
+    <!-- aos -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <!-- CDN형식으로 연결한 aosjs -->
+    <script src="./js/jquery-4.0.0.min.js"></script>
+    <!-- 외부 js 연결 -->
+    <script src="./js/script.js"></script>
+
+
+
+</body>
+
+</html>
