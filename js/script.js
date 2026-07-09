@@ -359,6 +359,48 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
     ///
+
+
+//가로 슬라이드 스크롤 자유
+     // 2. 마우스 휠 이벤트 처리 (글자가 다 안 올라와도 즉시 스크롤 가능)
+        window.addEventListener('wheel', (e) => {
+            if (isFooterInView) {
+                
+                // [닫힌 상태] 휠을 아래로 내리면 -> 오른쪽 창을 즉시 엽니다.
+                // (isAnimating 조건을 제거하여 글자가 나오는 중에도 휠 입력이 먹히도록 합니다)
+                if (e.deltaY > 0 && !isPanelOpen) {
+                    e.preventDefault(); 
+                    isAnimating = true;
+                    
+                    rightPanel.classList.add('open'); 
+                    isPanelOpen = true;
+
+                    setTimeout(() => { isAnimating = false; }, 400); // 대기 시간도 400ms로 단축
+                    return; 
+                } 
+                // [열린 상태] 휠을 아래로 더 내릴 때 -> 글자가 다 안 나왔어도 무조건 밑으로 즉시 스크롤 다운
+                else if (e.deltaY > 0 && isPanelOpen) {
+                    // e.preventDefault()가 없으므로 휠을 내리는 순간 화면이 바로 밑으로 내려갑니다.
+                    return; 
+                }
+                
+                // [열린 상태] 화면이 이 섹션에 머물러 있으면서 휠을 위로 올릴 때 -> 오른쪽 창을 즉시 닫습니다.
+                else if (e.deltaY < 0 && isPanelOpen) {
+                    const rect = footerSection.getBoundingClientRect();
+                    if (rect.top >= -50) {
+                        e.preventDefault(); 
+                        isAnimating = true;
+                        
+                        rightPanel.classList.remove('open'); 
+                        isPanelOpen = false;
+
+                        setTimeout(() => { isAnimating = false; }, 400); // 대기 시간 단축
+                        return; 
+                    }
+                }
+            }
+        }, { passive: false });
+  //
     // ⚡ QUICK 버튼 클릭 창을 여닫는 함수
 function toggleQuickMenu() {
     const quickBar = document.getElementById('quickMenuBar');
