@@ -1318,14 +1318,13 @@ body::-webkit-scrollbar {
     font-weight: bold;
     text-decoration: underline;
 
-    color: #ff6b35;
+    color:  #053191;
 }
 
 .answer-overlay.type-light p strong {
-    color: #ff6b35;
+    color:  #053191;
 
 }
-
 /* 컬러 테마 */
 .point-orange {
     background-color: #218045;
