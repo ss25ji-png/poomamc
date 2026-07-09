@@ -385,7 +385,7 @@ body::-webkit-scrollbar {
 
 
 /* ==========================================================================
-   6. 전체 화면 GNB 오버레이 패널 
+   전체  GNB 오버레이 패널 
    ========================================================================== */
 .gnb_overlay {
     position: fixed;
@@ -428,7 +428,6 @@ body::-webkit-scrollbar {
     transform: translateY(0);
 }
 
-/* 메뉴 리스트 타이포그래피 순차  딜레이 모션 파트 */
 .gnb_overlay.open .gnb_list li:nth-child(1) {
     transition-delay: 0.1s;
 }
@@ -478,7 +477,7 @@ body::-webkit-scrollbar {
 
 }
 
-/* 메인 화면 스타일 */
+/*============ 메인 비디오 ========== */
 #main-section {
     position: sticky;
     top: 0;
@@ -488,16 +487,19 @@ body::-webkit-scrollbar {
     justify-content: center;
     align-items: center;
     background-color: #2a2d34;
-    will-change: transform, border-radius;
-    transition: transform 0.1s ease-out, border-radius 0.1s ease-out;
     z-index: 1;
-
+    transition: none !important;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+    will-change: transform, border-radius;
 }
 
 #main-section .content {
     font-size: 3rem;
     font-weight: bold;
     text-align: center;
+     transform: translateZ(0); 
 }
 
 
@@ -506,6 +508,8 @@ body::-webkit-scrollbar {
     height: 400vh;
     z-index: 2;
     margin-top: 0;
+  transform: translateZ(0);
+
 }
 
 .slide-1,
@@ -515,9 +519,17 @@ body::-webkit-scrollbar {
     width: 100vw;
     height: 100vh;
     scroll-snap-align: start;
+    will-change: transform;
+    transform: translateZ(0);
 }
 
-/* 왼쪽을 채우는 반투명 초록색(민트색) 텍스트 박스 컨테이너 */
+
+
+/* ----------------------------------------- */
+/* 슬라이드1 */
+/* ----------------------------------------- */
+
+/* (민트색) 텍스트 박스 컨테이너 */
 .slide-1 .text-box {
     position: absolute;
     left: 0;
@@ -534,7 +546,7 @@ body::-webkit-scrollbar {
 
 /* 제목 스타일  */
 .slide-1 .text-box h2 {
-    font-size: 4rem;
+    font-size: 3.8rem;
     line-height: 60px;
     font-weight: 900;
     color: #fff;
@@ -545,7 +557,7 @@ body::-webkit-scrollbar {
 
 /* 본문 첫 번째 단락 */
 .slide-1 .text-box p {
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     line-height: 1.8;
     color: #fff;
     margin-bottom: 30px;
@@ -553,7 +565,7 @@ body::-webkit-scrollbar {
 }
 
 .slide-1 .text-box .sub-text {
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     line-height: 1.8;
     font-weight: 500;
     color: #fff;
@@ -565,7 +577,7 @@ body::-webkit-scrollbar {
 .poom-counter-section {
     position: absolute;
     bottom: 8%;
-    right: 8%;
+    left: 8%;
     display: flex;
     gap: 40px;
     z-index: 10;
@@ -607,9 +619,6 @@ body::-webkit-scrollbar {
     margin-top: 10px;
 }
 
-/* ----------------------------------------- */
-/* 애니메이션 대기 및 등장 상태 */
-/* ----------------------------------------- */
 .text-box h2,
 .text-box p,
 .text-box .sub-text {
@@ -643,7 +652,7 @@ body::-webkit-scrollbar {
 }
 
 .slide-1.active .text-box .sub-text {
-    transition-delay: 0.7s;
+    transition-delay: 0.6s;
 }
 
 .slide-1 {
@@ -673,7 +682,7 @@ body::-webkit-scrollbar {
     display: flex;
     width: 400vw;
     height: 100vh;
-    transition: transform 0.1s ease-out;
+     transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1) !important;
 }
 
 .slide {
@@ -687,6 +696,9 @@ body::-webkit-scrollbar {
 }
 
 
+/* ----------------------------------------- */
+/* 슬라이드 2  */
+/* ----------------------------------------- */
 
 .slide-2 {
     background-image: url('../img/main_2.jpg');
@@ -706,7 +718,7 @@ body::-webkit-scrollbar {
     width: 50%;
     height: 100%;
 
-    background-color: rgba(59, 119, 151, 0.671);
+    background-color: rgba(59, 119, 151, 0.384);
 
     display: flex;
     flex-direction: column;
@@ -722,14 +734,14 @@ body::-webkit-scrollbar {
     line-height: 50px;
     font-weight: 800;
     color: #fff;
-    margin-bottom: 50px;
+    margin-bottom: 2%;
     letter-spacing: -1px;
 
 }
 
 /* 부제목 ((Integrity)) */
 .slide-2 .text-box-2 h3 {
-    font-size: 46px;
+    font-size: 40px;
     font-weight: 800;
     color: #fff;
     margin-bottom: 100px;
@@ -738,22 +750,19 @@ body::-webkit-scrollbar {
 
 /* 본문 설명 글귀 */
 .slide-2 .text-box-2 p {
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     line-height: 1.8;
     color: rgba(255, 255, 255, 0.9);
     font-weight: 400;
 }
 
-/* ----------------------------------------- */
-/* 슬라이드 2  */
-/* ----------------------------------------- */
 
 .text-box-2 h2,
 .text-box-2 h3,
 .text-box-2 p {
     opacity: 0;
     transform: translateY(-40px);
-    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    transition: opacity 0.4s cubic-bezier(0.25, 1, 0.5, 1), transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
     will-change: transform, opacity;
 }
 
@@ -779,14 +788,16 @@ body::-webkit-scrollbar {
 }
 
 .slide-2.active .text-box-2 h3 {
-    transition-delay: 0.5s;
+    transition-delay: 0.2s;
 }
 
 .slide-2.active .text-box-2 p {
-    transition-delay: 0.7s;
+    transition-delay: 0.6s;
 }
 
-
+/* ----------------------------------------- */
+/* 슬라이드 3  */
+/* ----------------------------------------- */
 
 .slide-3 {
     background-image: url('../img/main_3.jpeg');
@@ -820,13 +831,13 @@ body::-webkit-scrollbar {
     line-height: 60px;
     font-weight: 800;
     color: #fff;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
     letter-spacing: -1px;
 }
 
 /* 부제목 ((24H Continuity)) */
 .slide-3 .text-box-3 h3 {
-    font-size: 46px;
+    font-size: 40px;
     font-weight: 800;
     color: #fff;
     margin-bottom: 50px;
@@ -835,26 +846,21 @@ body::-webkit-scrollbar {
 
 /* 본문 설명 글귀 */
 .slide-3 .text-box-3 p {
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     line-height: 1.8;
     color: rgba(255, 255, 255, 0.9);
     font-weight: 400;
 }
-
-/* ----------------------------------------- */
-/* 슬라이드 3  */
-/* ----------------------------------------- */
 
 .text-box-3 h2,
 .text-box-3 h3,
 .text-box-3 p {
     opacity: 0;
     transform: translateY(-40px);
-    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    transition: opacity 0.4s cubic-bezier(0.25, 1, 0.5, 1), transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
     will-change: transform, opacity;
 }
 
-/* active 클래스가 붙으면 원위치로 다운되며 선명해짐 */
 .slide-3.active .text-box-3 h2 {
     opacity: 1;
     transform: translateY(0);
@@ -870,7 +876,6 @@ body::-webkit-scrollbar {
     transform: translateY(0);
 }
 
-/* 글자들 시간차(Delay) 부여 */
 .slide-3.active .text-box-3 h2 {
     transition-delay: 0.1s;
 }
@@ -880,8 +885,11 @@ body::-webkit-scrollbar {
 }
 
 .slide-3.active .text-box-3 p {
-    transition-delay: 0.7s;
+    transition-delay: 0.6s;
 }
+/* ----------------------------------------- */
+/* 슬라이드 4 */
+/* ----------------------------------------- */
 
 .slide-4 {
 
@@ -898,11 +906,10 @@ body::-webkit-scrollbar {
     padding: 0;
 }
 
-/* 보랏빛 텍스트 박스 컨테이너 */
 .slide-4 .text-box-4 {
     width: 50%;
     height: 100%;
-    background-color: rgba(94, 113, 210, 0.546);
+    background-color: rgba(4, 112, 85, 0.336);
 
     display: flex;
     flex-direction: column;
@@ -918,13 +925,13 @@ body::-webkit-scrollbar {
     line-height: 50px;
     font-weight: 800;
     color: #fff;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     letter-spacing: -1px;
 }
 
 /* 부제목 ((Excellence)) */
 .slide-4 .text-box-4 h3 {
-    font-size: 46px;
+    font-size: 40px;
     font-weight: 800;
     color: #fff;
     margin-bottom: 50px;
@@ -933,7 +940,7 @@ body::-webkit-scrollbar {
 
 /* 본문 설명 글귀 */
 .slide-4 .text-box-4 p {
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     line-height: 1.8;
     color: rgba(255, 255, 255, 0.9);
     font-weight: 400;
@@ -948,7 +955,7 @@ body::-webkit-scrollbar {
 .text-box-4 p {
     opacity: 0;
     transform: translateY(-40px);
-    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    transition: opacity 0.4s cubic-bezier(0.25, 1, 0.5, 1), transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
     will-change: transform, opacity;
 }
 
@@ -977,7 +984,7 @@ body::-webkit-scrollbar {
 }
 
 .slide-4.active .text-box-4 p {
-    transition-delay: 0.7s;
+    transition-delay: 0.6s;
 }
 
 
@@ -1413,10 +1420,15 @@ body::-webkit-scrollbar {
     bottom: 50px;
     left: 40px;
     color: #ffffff;
-    font-size: 1.0rem;
+    font-size: 2.0rem;
     font-weight: 500;
     line-height: 1.6;
     z-index: 20;
+      /* ★ 가로 글씨 정렬을 명확하게 보장합니다 */
+    writing-mode: horizontal-tb !important; /* 가로 방향 쓰기 설정 */
+    text-orientation: mixed !important;
+    letter-spacing: -0.5px; /* 한글이 예쁘게 모이도록 자간 조절 */
+    white-space: normal; /* 글자가 상자 크기에 맞춰 자연스럽게 줄바꿈되도록 허용 */
 
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
 
@@ -1940,6 +1952,7 @@ body::-webkit-scrollbar {
         transform: none;
 
     }
+    
 
 
     div.horizontal-scroll-container#horizontal-trigger .slide {
@@ -2318,7 +2331,7 @@ body::-webkit-scrollbar {
     }
 
     .footer-video-text {
-        font-size: 0.5rem;
+        font-size: 0.9rem;
         bottom: 30px;
         left: 20px;
     }
@@ -2367,7 +2380,7 @@ body::-webkit-scrollbar {
     }
 
     .footer-video-text {
-        font-size: 0.5rem;
+        font-size: 0.9rem;
         bottom: 20px;
         left: 15px;
     }
